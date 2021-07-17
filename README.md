@@ -20,6 +20,8 @@ $ yarn start
 ```
 The app should now be running on [localhost:5000](http://localhost:5000/).
 
+main files are `index.js` & `api/messages.js`
+
 ## Task 2
 This task will expect 2 arguments, the file with prices and the gift card balance.
 To run this project type:
@@ -27,6 +29,8 @@ To run this project type:
 $ yarn run task2 -- giftCardBalance=87 fileName=task2/data.json
 ```
 There is a sample file at `task2/data.json`
+
+The src file is at `task2/task2.js`
 
 This solution supports only getting 2 gifts to settle the balance at will do it in O(n) time. Specific solutions are better than generic ones to handle N gifts.
 So to get 3 or more gifts the complexity will increase. So to do that we will need a more complex algorithm and the usage of Workers.
