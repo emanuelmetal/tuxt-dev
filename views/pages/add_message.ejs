@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+<%- include ("../partials/nav.ejs") %>
+<div class="container">
+<h2>Hash a message</h2>
+<form action="/messages" method="post">
+        <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" name="message" id="message" rows="3"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-success">Success</button>
+</form>
+</div>
+
+</body>
+</html>

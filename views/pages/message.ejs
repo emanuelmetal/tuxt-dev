@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+<%- include ("../partials/nav.ejs") %>
+
+<div class="container" >
+        <div class="row">
+                <div class="col-6">
+                        <div class="card" style="width: 18rem;">
+                                <div class="card-header">
+                                        Message
+                                </div>
+                                <div class="card-body">
+                                        <h5 class="card-title"><%= results[0].hash %></h5>
+                                        <p class="card-text"><%= results[0].message %></p>
+                                </div>
+                        </div>
+                </div>
+
+        </div>
+</div>
+
+</body>
+</html>

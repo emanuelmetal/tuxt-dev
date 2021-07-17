@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+
+<%- include ("../partials/nav.ejs") %>
+
+<div class="container">
+<h2>Hashed messages</h2>
+
+<ul>
+    <% results.forEach(function(r) { %>
+        <li><a href="messages/<%= r.hash %>" target="_blank"> <%= r.hash %></a> - <%= r.message %></li>
+    <% }); %>
+</ul>
+
+</div>
+
+</body>
+</html>

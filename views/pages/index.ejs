@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include ("../partials/header.ejs") %>
+</head>
+
+<body>
+
+  <%- include ("../partials/nav.ejs") %>
+
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3><span class="glyphicon glyphicon-link"></span> Task 1 QA</h3>
+      <div class="alert alert-primary" role="alert">
+        Disclaimer: I did basically what the task asked. in order to recover the original message from a hash you need to store the original message, but the purpose of a hash is to protect the original message from reverse engineering.
+        Storing the original message is like storing passwords in plain text.
+      </div>
+      <ol>
+        <li>What would the bottleneck(s) be in your implementation as you acquire more users?</li>
+        <ul>
+          <li><code>The node JS crypto lybraruy is not concurrent, even if we use promises, workers or whatever, the lybrary is made in c and will not work in parallel so it will block the vent loop for each request</code></li>
+        </ul>
+        <li>How would you scale it?</li>
+        <ul>
+          <li><code>One option is to use:</code><a href="https://github.com/ronomon/crypto-async" target="blank">Crypto Async</a>, or to span node instances in parallel with a load balancer, but that may be an overkill</li>
+        </ul>
+        <li>How did you deploy the application?</li>
+        <ul>
+          <li><code>I used the free Heroku instance and deployed manually using the cli comands</code></li>
+        </ul>
+        <li>Why did you choose to deploy it this way?</li>
+        <ul>
+          <li><code>It is quick and simple</code></li>
+        </ul>
+        <li>How would you improve this deployment process if you needed to maintain it
+          long term?</li>
+        <ul>
+          <li><code>If we use heroku we can integrate it to any CI service, like travis CI that will take github code to build it and deploy it. Db changes will need to be managed with migration scripts (currently I did all by a direct connection)</code></li>
+        </ul>
+      </ol>
+
+    </div>
+  </div> <!-- row -->
+
+</div>
+
+
+</body>
+</html>
