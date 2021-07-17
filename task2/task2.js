@@ -28,23 +28,22 @@ function spendAllBalance( articles, arrLimit, balance) {
 
   let res_l, res_r;
 
-  let l = 0, r = arrLimit;
-  while (l<arrLimit && r>=0) {
-
-    if (Math.abs(articles[l].price + articles[r].price - balance) < diff) {
-      res_l = l;
-      res_r = r;
-      diff = Math.abs(articles[l].price + articles[r].price - balance);
+  let leftI = 0, rightI = arrLimit;
+  while (rightI > leftI) {
+    const res = Math.abs(articles[leftI].price + articles[rightI].price - balance);
+    if (res < diff) {
+      res_l = leftI;
+      res_r = rightI;
+      diff = res;
     }
 
-    if (articles[l].price + articles[r].price > balance) {
-      r -= 1;
+    if (articles[leftI].price + articles[rightI].price > balance) {
+      rightI -= 1;
     } else {
-      l += 1
+      leftI += 1
     }
   }
 
-//  Print the result
   if (!res_l || !res_r){
     console.log('Not possible');
     return

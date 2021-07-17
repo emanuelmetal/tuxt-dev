@@ -27,3 +27,8 @@ To run this project type:
 $ yarn run task2 -- giftCardBalance=87 fileName=task2/data.json
 ```
 There is a sample file at `task2/data.json`
+
+This solution supports only getting 2 gifts to settle the balance at will do it in O(n) time. Specific solutions are better than generic ones to handle N gifts.
+So to get 3 or more gifts the complexity will increase. So to do that we will need a more complex algorithm and the usage of Workers.
+The loading of the file must be async and the computation of the N gifts shoukld be sent to a tread Worker so the server cancontinue with something else.
+A promise is not the solution since when it starts a heavy computation will block the event loop until it finish the task.
